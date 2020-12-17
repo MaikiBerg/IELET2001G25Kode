@@ -1,7 +1,8 @@
 # IELET2001G25Kode
 Dette er kodedelen av prosjektinnleveringen, i tillegg kommer også setup instruksene.
 
-Du finner koden for Serveren i mappen "server"
+Du finner [koden](server/server_no_encrypt.js) for serveren/tjeneren i mappen [server](server/)
+
 Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Smarthus_koblingsskjema.JPG) for ESP32en i mappen [ESP32](ESP32/)
 
 
