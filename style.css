@@ -1,0 +1,447 @@
+/*This entire file will not be commented. If you want to learn the different style properties check out W3Schools (google it)*/
+* { /*This symbol applies to all elements on the page */
+    margin: 0;
+    padding: 0;
+}
+/*Before we continue, if a element has a . (dot) in front of it it is a CLASS (can apply to more then 1 element) */
+/*If a element has a # (hashtag) it is an ID (can only be applied to one element) */
+html,body { /*Here two elements are defined at the same time, that is possible. It is some of the main elements, html and body*/
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+
+
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    position: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    position: center;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    width: 100%; /*The element width in % (precentage). Using precentage means the element will scale on different monitor sizes*/
+    height: 100%; /*Height using precentage. 100% means it will cover the entire page (even tough you might not be able to see it because it is invisible)*/
+    display: flex; /*Display flex gives us a flexible way of displaying elements. It means that elements will follow scaling and jump if the page becomes to small*/
+    align-items: flex-start; /*This aligns the items on the y-axis. Here we are telling all elements within to always be aligned at the start*/
+    justify-content: center; /*This aligns the items on the x-axis. Here we are telling all elements within to always be aligned at the center*/
+    flex-flow: wrap; /*This tells all the elements within this element/box that if the screen becoms to small the elements are allowed to alter placement for optimal view/design*/
+    background-color: rgba(248, 248, 248, 1.0); /*This sets the background color of the box, in this case close to almost white*/
+}
+
+
+
+
+
+
+
+
+
+
+#main-content{ /*Here is the first user defined element, since there only will be one of this it is an ID with a # */
+    width: 100%; /*The element width in % (precentage). Using precentage means the element will scale on different monitor sizes*/
+    height: 100%; /*Height using precentage. 100% means it will cover the entire page (even tough you might not be able to see it because it is invisible)*/
+    display: flex; /*Display flex gives us a flexible way of displaying elements. It means that elements will follow scaling and jump if the page becomes to small*/
+    align-items: flex-start; /*This aligns the items on the y-axis. Here we are telling all elements within to always be aligned at the start*/
+    justify-content: center; /*This aligns the items on the x-axis. Here we are telling all elements within to always be aligned at the center*/
+    flex-flow: wrap; /*This tells all the elements within this element/box that if the screen becoms to small the elements are allowed to alter placement for optimal view/design*/
+    background-color: rgba(248, 248, 248, 1.0); /*This sets the background color of the box, in this case close to almost white*/
+}
+#main-content2{ /*Here is the first user defined element, since there only will be one of this it is an ID with a # */
+    width: 100%; /*The element width in % (precentage). Using precentage means the element will scale on different monitor sizes*/
+    height: 100%; /*Height using precentage. 100% means it will cover the entire page (even tough you might not be able to see it because it is invisible)*/
+    display: flex; /*Display flex gives us a flexible way of displaying elements. It means that elements will follow scaling and jump if the page becomes to small*/
+    align-items: flex-start; /*This aligns the items on the y-axis. Here we are telling all elements within to always be aligned at the start*/
+    justify-content: center; /*This aligns the items on the x-axis. Here we are telling all elements within to always be aligned at the center*/
+    flex-flow: wrap; /*This tells all the elements within this element/box that if the screen becoms to small the elements are allowed to alter placement for optimal view/design*/
+    background-color: rgba(248, 248, 248, 1.0); /*This sets the background color of the box, in this case close to almost white*/
+}
+/*control*/
+#control-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+.control-module { /*This defines common properties off all the control modules boxes (1-4)*/
+    width: 49.95%;
+    height: 50%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+
+}
+
+#control-module-1 { /*This box specifically alters control module box 1*/
+    border-right: 1px solid rgba(230, 230, 230, 1.0); /*This gives the element a border line*/
+    border-bottom: 1px solid rgba(230, 230, 230, 1.0);
+}
+
+#control-module-2 {
+    border-bottom: 1px solid rgba(230, 230, 230, 1.0);
+}
+
+#control-module-3 {
+    border-right: 1px solid rgba(230, 230, 230, 1.0);
+}
+
+#control-module-4 {
+
+}
+
+/* Controlmodules */
+/* Keyboard */
+.key-container {
+    width: 100%; /*50% of the width of the screen*/
+    height: 100%; /*and 50% of the height of the screen = 1/4 of the screen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-left: 1px solid rgba(240, 240, 240, 1.0);
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+    flex-flow: wrap;
+}
+
+.key-btn-top {
+    width: 100%;
+    height: 49%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.key-btn-btm {
+    width: 100%;
+    height: 49%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.key-btn { /*The actual key button style*/
+    width: 22.5%;
+    height: 67.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2%;
+    border: 3px solid #303030;
+    color: #00509e; /*This sets the color of the text*/
+    background-color: white;
+    font-size: 50px; /*This sets the font size of the text*/
+    font-family: "Arial";
+    font-weight: 900; /*This sets the font properties (bold, italics, etc.)*/
+    margin: 0 0.2% 0.2% 0.2%; /*Thi sets up a "keep away" zone around the element*/
+}
+
+.dragBox {
+    cursor: pointer; /*This alters the mouse cursor to a "pointy" type*/
+}
+
+.key-btn:hover { /*The hover here refers to if the mouse hovers over an element, should the element do anything special in this case?*/
+    cursor: pointer;
+}
+.key-btn:active{
+    border: 5px solid #303030;
+}
+
+
+/* Button */
+.btn-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-left: 1px solid rgba(240, 240, 240, 1.0);
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+    flex-flow: wrap;
+}
+
+.btn-title-con {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(230, 230, 230, 1.0);
+    cursor: pointer;
+}
+.btn-title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial";
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 2.5%;
+}
+.btn-txt-box{
+    width:30%;
+    height: 85%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.btn-txt-box-sub{
+    width: 100%;
+    height: 20%;
+    font-family: "Arial";
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+
+}
+.btn-box {
+    width: 20%;
+    height: 85%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-left: 10px;
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+
+
+}
+
+.btn {
+    width: 100%;
+    height: 20%;
+    font-family: "Arial";
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+    background-color: #7AD661;
+    text-align: center;
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+    vertical-align: middle;
+    border-radius: 10px;
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+
+
+}
+
+.btn:active{
+    border: 1px solid black;
+
+
+}
+
+
+.btn::selection{
+    border: #7AD661;
+}
+
+/* Chart */
+.chart-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-left: 1px solid rgba(240, 240, 240, 1.0);
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+}
+.chart-container2 {
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-left: 1px solid rgba(240, 240, 240, 1.0);
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+}
+
+
+
+#container{
+    position: relative;
+    flex-flow: wrap;
+    text-align: center;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+
+}
+
+#container div{
+    display:inline-block;
+    vertical-align: top;
+    outline: 1px solid black;
+}
+
+
+/* switch tatt fra W3schools */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    float: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #7AD661;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #7AD661;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+#wrapper {
+    clear: left;
+    width: 50%;
+    text-align: center;
+
+}
+
+#lysheader{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial";
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 2.5%;
+    border-bottom: 1px solid rgba(230, 230, 230, 1.0);
+
+}
+
+#doorstate{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    background: red;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-family: "Arial";
+    font-size: 24px;
+    font-weight: 800;
+}

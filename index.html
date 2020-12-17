@@ -1,0 +1,331 @@
+<!DOCTYPE html> <!--Defines the HTML document-->
+<html lang="no"> <!--Sets the language for the webpage-->
+<head> <!--Defined the head element, which is to say the top of the webpage. Sometimes menus are placed here-->
+    <meta charset="UTF-8"> <!--Sets the encoding of the webpage-->
+    <title>Datakom || Kontrollpanel</title> <!--Sets the title of the webpage-->
+    <link rel="stylesheet" href="style.css"> <!--Imports the stylesheet of the webpage. It gives element style-->
+    <script src="libraries/socket.io.js"></script> <!--Load Chart.js library-->
+    <script src="libraries/Chart.min.js"></script> <!--Load Chart.js library-->
+
+    <script>
+        var dataArr1 = []; /* The chart data for "Data 1", altering this array/list changes the graph data */
+        var dataArr2 = []; /* The chart data for "Data 2", altering this array/list changes the graph data */
+        var dataArr3 = []; /* The chart data for "Data 3", altering this array/list changes the graph data */
+        var dataArr4 = []; /* The chart data for "Data 4", altering this array/list changes the graph data */
+
+        var dataArr12 = []; /* The chart data for "Data 1-2", altering this array/list changes the graph data */
+        var dataArr22 = []; /* The chart data for "Data 2-2", altering this array/list changes the graph data */
+        var dataArr32 = []; /* The chart data for "Data 3-2", altering this array/list changes the graph data */
+        var dataArr42 = []; /* The chart data for "Data 4-2", altering this array/list changes the graph data */
+
+
+    </script>
+</head> <!-- the "/" indicates that the element is closed/stopped (you are done defining it)-->
+<body onload = "openTab(event, 'Main')";> <!--Defines the body element. This is traditionally where the main content is placed. Its the "middle" of the webpage-->
+
+
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Main')">MAIN</button>
+    <button class="tablinks" onclick="openTab(event, 'light_control');gimmeID()">LIGHTCONTROL</button> <!-- Call function to get IDs of ESP32 when going to control light-->
+    <button class="tablinks" onclick="openTab(event, 'user_list');getuserlist();filltable();">USERLIST</button><!-- Get userlist and filltable when tab is clicked -->
+    <button class="tablinks" onclick="openTab(event, 'Chatroom');retrieveChat()">CHAT</button><!-- Retrieve chat on click -->
+
+</div>
+
+<!-- Tab content -->
+<div id="Main" class="tabcontent">
+    <div id="main-content"> <!--The main container of the webpage/the main HTML "tag"-->
+
+        <div id="control-content"> <!--Just another HTML tag, this one defines the control panel container-->
+
+            <div class="control-module" id="control-module-1"> <!--This defines the first box with the keyboard in it (upper left)-->
+
+                <div class="btn-container"> <!--Here the dragElement is the entire box-->
+                    <div class="btn-title-con"> <!--But one can only start to drag it if one clicks on the top-box where the title is -->
+                        <h2 class="btn-title">GET DATA BUTTONS FOR TEMP</h2> <!--Title in the title-box-->
+                    </div>
+                    <div class = "btn-txt-box">
+                        <div class = "btn-txt-box-sub">ALL</div>
+                        <div class = "btn-txt-box-sub">HOUSE1</div>
+                        <div class = "btn-txt-box-sub">HOUSE2</div>
+                        <div class = "btn-txt-box-sub">HOUSE3</div>
+                        <div class = "btn-txt-box-sub">HOUSE4</div>
+                    </div>
+
+                    <div class="btn-box"> <!--Button container (left side of the container (split in middle) with a white background)-->
+                        <div class="btn" onclick="requestDataFromAllTemp(1000)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,0,0)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,0,1)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,0,2)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,0,3)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+
+                        <!--requestDataFromBoard function starts data transfer from the ESP32 to the webpage-->
+                    </div>
+
+                    <div class="btn-box"><!--Button container (right side of the container (split in middle) with a white background)-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+
+                        <!--stopDataFromBoard function stops data transfer from the ESP32 to the webpage-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-module" id="control-module-2">
+
+                <div class="btn-container">
+
+                    <div class="btn-title-con">
+                        <h2 class="btn-title">GET DATA BUTTONS FOR LIGHT</h2>
+                    </div>
+
+                    <div class = "btn-txt-box">
+                        <div class = "btn-txt-box-sub">ALL</div>
+                        <div class = "btn-txt-box-sub">HOUSE1</div>
+                        <div class = "btn-txt-box-sub">HOUSE2</div>
+                        <div class = "btn-txt-box-sub">HOUSE3</div>
+                        <div class = "btn-txt-box-sub">HOUSE4</div>
+                    </div>
+
+                    <div class="btn-box">
+                        <div class="btn" onclick="requestDataFromAllLight(1000)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,1,0)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,1,1)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,1,2)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <div class="btn" onclick="requestDataFromBoard(1000,1,3)"> GET DATA </div>  <!--The actual button with a green background. When you click this a functions is called-->
+                        <!--requestDataFromBoard function starts data transfer from the ESP32 to the webpage-->
+                    </div>
+
+                    <div class="btn-box">
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+                        <div class="btn" onclick = "stopDataFromAll()" style="background-color: #E23636">STOP DATA</div> <!--The actual button with a red background. When you click this a functions is called-->
+
+                        <!--stopDataFromBoard function stops data transfer from the ESP32 to the webpage-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-module" id="control-module-3"> <!--This defines the third box with the graph in it (lower left)-->
+
+                <!-- Content of third box-->
+                <div class="chart-container"> <!--Define the chart container element (box where the chart is placed)-->
+                    <canvas id="myChart" width="400" height="400"></canvas> <!--The actual chart element. Notice, this uses an id so copying it wont give you more charts. Something else has to be done-->
+                </div>
+
+            </div>
+
+            <div class="control-module" id="control-module-4"> <!--This defines the fourth box with the second graph in it (lower right)-->
+
+                <div class="chart-container2">
+                    <canvas id="myChart2" width="400" height="400"></canvas>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<div id="light_control" class="tabcontent">
+
+
+    <div id="main-content"> <!--The main container of the webpage/the main HTML "tag"-->
+        <div class="control-module" id="control-module-1">
+            <div id="control-content">
+                <h1 id = "lysheader">HOUSE 1</h1>
+
+                <div id = "wrapper">
+                    <h4>LIVING ROOM</h4>
+
+                    <label class="switch" >
+                        <input type="checkbox" id = "H1R1" onclick="sliderFunction(this.id)"> <!-- https://www.w3schools
+                        .com/howto/howto_js_display_checkbox_text.asp -->
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div id = "wrapper">
+
+                    <h4>BATHROOM</h4>
+                    <label class="switch" >
+                        <input type="checkbox"id = "H1R2" onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>KITCHEN</h4>
+                    <label class="switch">
+                        <input type="checkbox"id = "H1R3" onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BEDROOM</h4><label class="switch">
+                    <input type="checkbox"id = "H1R4" onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="control-module" id="control-module-2">
+            <div id="control-content">
+                <h1 id = "lysheader">HOUSE 2</h1>
+
+                <div id = "wrapper"><h4>LIVING ROOM</h4>
+
+                    <label class="switch">
+                        <input type="checkbox" id = "H2R1" onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BATHROOM</h4>
+                    <label class="switch">
+                        <input type="checkbox" id = "H2R2" onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>KITCHEN</h4>
+                    <label class="switch">
+                        <input type="checkbox" id = "H2R3" onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BEDROOM</h4>
+                    <label class="switch">
+                        <input type="checkbox"id = "H2R4"onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="control-module" id="control-module-3">
+            <div id="control-content">
+                <h1 id = "lysheader">HOUSE 3</h1>
+
+                <div id = "wrapper"><h4>LIVING ROOM</h4>
+
+                    <label class="switch">
+                        <input type="checkbox"id = "H3R1"onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BATHROOM</h4> <label class="switch">
+                    <input type="checkbox"id = "H3R2"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>KITCHEN</h4> <label class="switch">
+                    <input type="checkbox"id = "H3R3"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BEDROOM</h4><label class="switch">
+                    <input type="checkbox"id = "H3R4"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="control-module" id="control-module-4">
+            <div id="control-content">
+                <h1 id = "lysheader">HOUSE 4</h1>
+
+                <div id = "wrapper"><h4>LIVING ROOM</h4>
+
+                    <label class="switch">
+                        <input type="checkbox"id = "H4R1"onclick="sliderFunction(this.id)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BATHROOM</h4> <label class="switch">
+                    <input type="checkbox"id = "H4R2"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>KITCHEN</h4> <label class="switch">
+                    <input type="checkbox"id = "H4R3"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+                <div id = "wrapper">
+
+                    <h4>BEDROOM</h4><label class="switch">
+                    <input type="checkbox"id = "H4R4"onclick="sliderFunction(this.id)">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="user_list" class="tabcontent">
+    <table id = "rows">
+        <tr>
+            <th>User</th>
+            <th>IP</th>
+            <th>Last login</th>
+        </tr>
+
+    </table>
+
+</div>
+
+<div id = "Chatroom" class = "tabcontent">
+    <input id="msginput" type="text"  size="150">
+    <button id = "sendmsg" > Send message </button>
+    <div id="chatbox"></div>
+
+</div>
+
+
+
+
+
+    <!--Script imports-->
+        <script src = "script/socket.js"></script>
+        <script src="script/chartoperation.js"></script>
+        <script src="script/script.js"></script>
+        <script src ="script/tabs.js"></script>
+
+</body>
+</html>
