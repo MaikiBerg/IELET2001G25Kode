@@ -5,6 +5,7 @@ Du finner [koden](server/server_no_encrypt.js) for serveren/tjeneren i mappen [s
 
 Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Smarthus_koblingsskjema.JPG) for ESP32en i mappen [ESP32](ESP32/)
 
+Dersom portene er åpne, og serveren er oppe og kjører kan du prøve å bli autentisert her: http://ielet2001g25.ddns.net/
 
 
 ## OPPSETT AV IELET2001 G25 "SMARTHUS"
