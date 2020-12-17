@@ -23,16 +23,26 @@ Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Sm
 	hvor du laster ned pakkene for at dem skal fungere.
 
 	https://www.npmjs.com/ “Node packet manager” 	For å installere og kontrollere pakker
+	
 	https://www.nginx.com/ 				For å nettsiden
+	
 	https://nodejs.org/en/ 				For server og nettverksapplikasjoner
+	
 	https://fail2ban.org/wiki/index.php/Main_Page 	For sikkerhet
+	
 	https://socket.io/ 				for websocket kommunikasjon
 
-	Skriv følgende i terminalen på Raspberry Pi. 
+	Skriv følgende i terminalen på Raspberry Pi:
+	
 	sudo apt-get install npm
+	
 	npm i file-system 
+	
 	npm i express
-	npm install socket.io@2.3.0		(NB / OBS: Dersom tilhørende tjenerkode skal fungere må du bruke versjon 2.3.0
+	
+	npm install socket.io@2.3.0		
+	
+						(NB / OBS: Dersom tilhørende tjenerkode skal fungere må du bruke versjon 2.3.0
 						eller tidligere versjon, ellers må du endre alle funksjoner 
 						
 						fra: 	function kvadrering(parameter) {parameter*parameter};
