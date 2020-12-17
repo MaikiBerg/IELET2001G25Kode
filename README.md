@@ -2,7 +2,7 @@
 Dette er kodedelen av prosjektinnleveringen, i tillegg kommer også setup instruksene.
 
 Du finner koden for Serveren i mappen "server"
-Du finner tilhørende kode og koblingsskjema for ESP32en i mappen [here](ESP32/Kode_ESPnr1.ino)
+Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](Smarthus koblingsskjema.jpg) for ESP32en i mappen 
 
 
 
