@@ -17,7 +17,7 @@ Dersom portene er åpne, serveren er oppe, vi fremdeles har domenet og samme IP-
 	https://www.raspberrypi.org/software/ 
 
 
-3. Sett inn SD kortet og følg instruksene på raspberrypi.org
+3. Sett inn SD kortet og følg instruksene på https://www.raspberrypi.org
 
 
 4. Koble til nettet og installer følgende på raspberry pi, instrukser nedenfor, husk å være kritisk og tenk over 
