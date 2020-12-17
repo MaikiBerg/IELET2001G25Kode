@@ -34,7 +34,9 @@ Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Sm
 	npm i express
 	npm install socket.io@2.3.0		(NB / OBS: Dersom tilhørende tjenerkode skal fungere må du bruke versjon 2.3.0
 						eller tidligere versjon, ellers må du endre alle funksjoner 
+						
 						fra: 	function kvadrering(parameter) {parameter*parameter};
+						
 						til: 	kvadrering = parameter => parameter*parameter;
 
 
