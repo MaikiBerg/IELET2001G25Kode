@@ -67,7 +67,7 @@ Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Sm
 
 
 
-Nå som du har en fungerende nettside kan du gå videre med å koble den opp mot firebase.
+### Nå som du har en fungerende nettside kan du gå videre med å koble den opp mot firebase.
  
 8. Lag deg en bruker på https://firebase.google.com/, skriv "npm i firebase-admin" i RPI terminalen for å installere nødvendig programvare (HUSK Å VÆRE I RIKTIG MAPPE).
 	Inkluder firebase admin sdk i mappen til serveren din, adminsdk henter du fra Firebase sine sider. 
@@ -76,7 +76,7 @@ Nå som du har en fungerende nettside kan du gå videre med å koble den opp mot
 	 som da skal sjekke mot databasen om brukernavn og passord stemmer før klienten får tilgang. 
 
 
-Nå er du klar til siste steg, å ha en globalt tilgjengelig server og nettside.
+### Nå er du klar til siste steg, å ha en globalt tilgjengelig server og nettside.
 
 10. Åpne porter på ruteren (80 for HTTP, og 2520 for node.js tjeneren), og send datatrafikk til IP-addressen til Raspberry Pi-en din,
 	Videre skal du endre IP-addressen i Socket.js og ESP32-koden, fra Raspberry Pi-en din sin lokale ip-addresse
@@ -91,7 +91,7 @@ Nå er du klar til siste steg, å ha en globalt tilgjengelig server og nettside.
 	
 
 
-Filplassering:
+### Filplassering:
 
 Legg index.html og style.css i var/www/html
 
