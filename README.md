@@ -97,6 +97,7 @@ Dersom portene er åpne, serveren er oppe, vi fremdeles har domenet og samme IP-
 
 11. OPTIONAL: Gå til f.eks. www.noip.com og skaff deg et gratis domene slik at du slipper å huske IP-addressen din. 
 	vi gikk med ielet2001g25.ddns.net
+	
 	Dersom du anskaffer deg et gratis domene må du belage deg på gratis reklame av DNS-provideren din, og at domene ditt må være aktivt i bruk. 
 	Dersom domene ditt er inaktivt i 30 dager, mister du det. 
 	Om ønskelig kan du også betale for et domene, men da anbefales oppsett av Dynamic DNS, da oppdateres IP-addressen tilhørende domenet
