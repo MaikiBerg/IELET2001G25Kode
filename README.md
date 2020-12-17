@@ -92,8 +92,12 @@ Nå er du klar til siste steg, å ha en globalt tilgjengelig server og nettside.
 
 
 Filplassering:
+
 Legg index.html og style.css i var/www/html
+
 Legg scripts: socket.js, script.js, chartpoeration.js, tabs.js i var/www/html/script
+
 Legg bibliotekene: Chart.min.js, socket.io.js og socket.io.js.map i var/www/html/libraries
+
 Legg inn register mappa i var/www/html
 
