@@ -1,8 +1,6 @@
 # IELET2001G25Kode
 Dette er kodedelen av prosjektinnleveringen, i tillegg kommer også setup instruksene.
-Server koden finner du i mappen "Server"
-Koden og oppkobling til ESP32 finner du i mappen "MCU"
-Resten av koden finner du i mappen "Nettside"
+
 
 
 
