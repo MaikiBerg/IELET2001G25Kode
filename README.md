@@ -115,3 +115,4 @@ Legg bibliotekene: Chart.min.js, socket.io.js og socket.io.js.map i var/www/html
 
 Legg inn register mappa i var/www/html
 
+Legg server mappa i f.eks. /server husk å endre på firebase sdk filen og i server koden til din egen.
