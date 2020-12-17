@@ -48,7 +48,7 @@ Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Sm
 	
 	sudo apt-get install fail2ban
 	
-	(NB / OBS: Dersom tilhørende tjenerkode skal fungere må du bruke versjon 2.3.0
+	***NB / OBS***: Dersom tilhørende tjenerkode skal fungere må du bruke versjon 2.3.0
 	eller tidligere versjon, ellers må du endre alle funksjoner 
 						
 	fra: 	function kvadrering(parameter) {parameter*parameter};
