@@ -7,7 +7,7 @@ Du finner tilhørende [kode](ESP32/Kode_ESPnr1.ino) og [koblingsskjema](ESP32/Sm
 
 
 
-OPPSETT AV IELET2001 G25 "SMARTHUS"
+#OPPSETT AV IELET2001 G25 "SMARTHUS"
 
 1. Finn frem tastatur, mus, skjerm og HDMI kabel.
 
