@@ -82,7 +82,7 @@ Dersom portene er åpne, serveren er oppe, vi fremdeles har domenet og samme IP-
 
 ### Nå som du har en fungerende nettside kan du gå videre med å koble den opp mot firebase.
  
-8. Lag deg en bruker på https://firebase.google.com/, skriv "npm i firebase-admin" i RPI terminalen for å installere nødvendig programvare (HUSK Å VÆRE I RIKTIG MAPPE).
+8. Lag deg en bruker på https://firebase.google.com/, skriv "npm i firebase-admin" i RPI terminalen for å installere nødvendig programvare (obs, vær i riktig mappe, gjerne /server).
 	Inkluder firebase admin sdk i mappen til serveren din, adminsdk henter du fra Firebase sine sider. 
 	Implementer registrering for sikkerhets skyld. Du skal lagre brukere og passord i databasen din, 
 	 og når en klient prøver å koble seg til serveren må klienten sende brukernavn og passord til serveren
@@ -115,4 +115,4 @@ Legg bibliotekene: Chart.min.js, socket.io.js og socket.io.js.map i var/www/html
 
 Legg inn register mappa i var/www/html
 
-Legg server mappa i f.eks. /server husk å endre på firebase sdk filen og i server koden til din egen.
+Legg server mappa i f.eks. /server husk å legg til egen firebase sdk fil og endre "path" i server koden til din egen.
